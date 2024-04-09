@@ -48,6 +48,7 @@ startBtnElem.addEventListener('click', () => {
 
     startBtnElem.setAttribute('disabled', 'true');
 
+
     const timer = setInterval(() => {
 
         const diff = userSelectedDate - Date.now()
