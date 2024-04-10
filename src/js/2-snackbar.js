@@ -40,19 +40,19 @@ formElem.addEventListener('submit', event => {
     const promise = new Promise((resolve, reject) => {
         setTimeout(() => {
             if(inputFulfill.checked){
-                resolve()
+                resolve(inputTime.value)
             } else {
-                reject()
+                reject(inputTime.value)
             }
         }, inputTime.value)
     })
 
-    promise.then(() => {
+    promise.then((time) => {
         fulfilledPromise(inputTime.value);
-        console.log(`Fulfilled promise in ${inputTime.value}ms`)
-    }).catch(() => {
+        console.log(`Fulfilled promise in ${time} ms`)
+    }).catch((time) => {
         rejectedPromise(inputTime.value);
-        console.log( `Rejected promise in ${inputTime.value}ms`)
+        console.log( `Rejected promise in ${time} ms`)
     }).finally(() => inputTime.value = '')
 
 })
