@@ -47,6 +47,7 @@ flatpickr(inputElem, options);
 startBtnElem.addEventListener('click', () => {
 
     startBtnElem.setAttribute('disabled', 'true');
+    inputElem.disabled = true
 
 
     const timer = setInterval(() => {
@@ -62,6 +63,7 @@ startBtnElem.addEventListener('click', () => {
         if (diff <= 0) {
             clearInterval(timer)
             startBtnElem.removeAttribute('disabled')
+            inputElem.disabled = false
 
             daysElem.textContent = '00';
             hoursElem.textContent = '00';
